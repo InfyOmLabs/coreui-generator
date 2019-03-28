@@ -165,6 +165,12 @@ return [
         /*
          * Package Service Providers...
          */
+        Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        \InfyOm\CoreUITemplates\CoreUITemplatesServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,12 +180,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
-        \InfyOm\CoreUITemplates\CoreUITemplatesServiceProvider::class,
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
-        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+
     ],
 
     /*
