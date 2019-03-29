@@ -77,19 +77,19 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+           <div class="content">
+               <div class="title m-b-md">
+                   Infyom CoreUI template
+               </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+               <div class="links">
+                   <a href="http://labs.infyom.com/laravelgenerato">Infyom Labs Docs</a>
+                   <a href="https://laravel.com/docs">Laravel Docs</a>
+                   <a href="https://coreui.io/docs/getting-started/introduction">CoreUI Docs</a>
+                   <a href="https://github.com/laravel/laravel">Laravel GitHub</a>
+                   <a href="https://github.com/InfyOmLabs/laravel-generator">Infyom Labs GitHub</a>
+               </div>
+           </div>
         </div>
     </body>
 </html>
