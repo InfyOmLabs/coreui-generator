@@ -14,7 +14,7 @@
         "laravel/tinker": "^1.0",
         "barryvdh/laravel-ide-helper": "^2.6",
         "doctrine/dbal": "~2.3",
-        "infyomlabs/coreui-templates": "dev-shailesh/5.7-devlop",
+        "infyomlabs/coreui-templates": "5.7.*",
         "infyomlabs/laravel-generator": "5.7.x-dev",
         "infyomlabs/swagger-generator": "dev-master",
         "laravelcollective/html": "^5.7.0"
