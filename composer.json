@@ -15,7 +15,7 @@
         "appointer/swaggervel": "dev-master",
         "barryvdh/laravel-ide-helper": "^2.6",
         "doctrine/dbal": "~2.3",
-        "infyomlabs/coreui-templates": "dev-shailesh/path-fixes",
+        "infyomlabs/coreui-templates": "5.8.*",
         "infyomlabs/laravel-generator": "5.8.x-dev",
         "infyomlabs/swagger-generator": "dev-master",
         "laravelcollective/html": "^5.8.0"
