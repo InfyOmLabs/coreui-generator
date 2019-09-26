@@ -22,7 +22,7 @@
     </button>
     <a class="navbar-brand" href="#">
         <img class="navbar-brand-full" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30" height="30"
-             alt="Infyom Logo">
+             alt="InfyOm Logo">
         <img class="navbar-brand-minimized" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30"
              height="30" alt="Infyom Logo">
     </a>
@@ -80,8 +80,8 @@
 </div>
 <footer class="app-footer">
     <div>
-        <a href="https://infyom.com">Infyom </a>
-        <span>&copy; 2019 infyomLabs.</span>
+        <a href="https://infyom.com">InfyOm </a>
+        <span>&copy; 2019 InfyOmLabs.</span>
     </div>
     <div class="ml-auto">
         <span>Powered by</span>
