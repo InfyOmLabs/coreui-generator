@@ -1,0 +1,66 @@
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: unset;
+    border: 1px solid transparent;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    min-width: unset;
+    padding: unset;
+}
+
+.dataTables_filter {
+    margin-left: auto;
+}
+
+.dataTables_filter input {
+    margin-left: 8px;
+}
+
+.dataTables_wrapper table {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-left: 1px solid #c8ced3;
+    border-right: 1px solid #c8ced3;
+}
+
+.pagination {
+    margin-bottom: 0;
+}
+
+.paging_simple_numbers {
+    margin-left: auto;
+}
+
+.paginate_button a {
+    padding: 5px 10px;
+    color: black;
+}
+
+.paginate_button.active a {
+    background: #20a8d8;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.paginate_button a:hover {
+    text-decoration: none;
+}
+
+.paginate_button a:focus {
+    outline: none;
+}
+
+.paginate_button:hover:not(.active) a {
+    background: #dcdcdc;
+    color: #000000;
+}
+
+.pagination .paginate_button:first-child a:hover,
+.pagination .paginate_button:last-child a:hover {
+    background: initial;
+    color: #20a8d8;
+}
+
+.pagination .paginate_button:last-child a {
+    padding-right: 0;
+}
