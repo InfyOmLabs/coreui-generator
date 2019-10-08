@@ -64,3 +64,28 @@
 .pagination .paginate_button:last-child a {
     padding-right: 0;
 }
+
+.dataTables_wrapper table tr th {
+    width: unset !important;
+    border-right: 1px solid #c8ced3;
+}
+
+.dataTables_wrapper table tr td {
+    border-right: 1px solid #c8ced3;
+}
+
+.dataTables_wrapper table tr td form {
+    width: fit-content;
+    margin: auto;
+}
+
+.dataTables_wrapper table tr th:last-child {
+    width: 120px !important;
+    border-right: 0;
+    text-align: center;
+}
+
+dataTables_wrapper. table tr td:last-child {
+    width: 120px !important;
+    border-right: 0;
+}
