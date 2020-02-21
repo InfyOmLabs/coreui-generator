@@ -1,7 +1,4 @@
 /node_modules
-/public/assets
-/public/uploads
-/public/fonts
 /public/uploads
 /storage/*.key
 /vendor
@@ -13,5 +10,3 @@ npm-debug.log
 yarn-error.log
 /.idea
 /_ide_helper.php
-public/mix-manifest.json
-public/images/blue-custom.png
