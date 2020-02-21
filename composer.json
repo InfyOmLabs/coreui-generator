@@ -13,12 +13,14 @@
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "infyomlabs/laravel-generator": "6.0.x-dev",
+        "infyomlabs/adminlte-templates": "6.0.x-dev",
         "infyomlabs/coreui-templates": "6.0.x-dev",
         "laravelcollective/html": "^6.0",
         "doctrine/dbal": "~2.3",
         "yajra/laravel-datatables-buttons":"^4.6",
         "yajra/laravel-datatables-html":"^4.4",
         "yajra/laravel-datatables-oracle":"~9.0",
+        "intervention/image": "dev-master",
         "appointer/swaggervel": "dev-master",
         "infyomlabs/swagger-generator": "dev-master"
     },
@@ -44,6 +46,7 @@
         "psr-4": {
             "App\\": "app/"
         },
+      "files": ["app/helpers.php"],
         "classmap": [
             "database/seeds",
             "database/factories"
