@@ -76,16 +76,23 @@
               name: 'phone',
             },
             {
-              data: 'phone',
-              name: 'phone',
+              data: function (row) {
+                return '<a title="Edit" class="btn action-btn btn-primary btn-sm edit-btn mr-1" href="{{url('/users')}}/' + row.id + '/edit" >' +
+                  '<i class="cui-pencil action-icon"></i>' + '</a>' +
+                  '<a title="Delete" class="btn action-btn btn-danger btn-sm delete-btn" data-id="' +
+                  row.id + '">' +
+                  '<i class="cui-trash action-icon" ></i></a>'
+              }, name: 'id',
             },
           ],
         })
       })
 
-      function deleteData (id) {
-        deleteItem('{{url('users')}}/' + id, '#users-table', 'User')
-      }
+      // open delete confirmation model
+      $(document).on('click', '.delete-btn', function (event) {
+        let userId = $(event.currentTarget).data('id');
+        deleteItem('{{url('users')}}/' + userId, '#users_table', 'User');
+      });
     </script>
 @endsection
 

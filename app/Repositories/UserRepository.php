@@ -25,8 +25,6 @@ class UserRepository extends BaseRepository
     protected $fieldSearchable = [
         'name',
         'email',
-        'email_verified_at',
-        'password',
         'phone'
     ];
 
@@ -83,6 +81,7 @@ class UserRepository extends BaseRepository
      */
     public function update($id, $input)
     {
+        $input = $this->validateInput($input);
         /** @var User $user */
         $user = $this->findOrFail($id);
         try {

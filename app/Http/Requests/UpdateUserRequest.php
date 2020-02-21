@@ -2,14 +2,13 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Models\User;
+use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateUserRequest extends FormRequest
 {
-
     /**
-     * Determine if the User is authorized to make this request.
+     * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
@@ -21,12 +20,23 @@ class UpdateUserRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array
+     * @return array The given data was invalid.
      */
     public function rules()
     {
+        $id = $this->route('user')->id;
         $rules = User::$rules;
-        
+        $rules['name'] =  'required|unique:users,name,'.$id;
+        $rules['email'] = 'required|email|unique:users,email,'.$id.'|regex:/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/';
+
         return $rules;
+    }
+
+    /**
+     * @return array
+     */
+    public function messages()
+    {
+        return User::$messages;
     }
 }
