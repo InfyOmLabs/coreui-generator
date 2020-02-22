@@ -133,18 +133,6 @@ window.manageCheckbox = function (input) {
     });
   }
 };
-// window.onload = function () {
-//   window.startLoader = function () {
-//     $('.infy-loader').show();
-//   };
-//
-//   window.stopLoader = function () {
-//     $('.infy-loader').hide();
-//   };
-//
-// // infy loader js
-//   stopLoader();
-// };
 
 window.manageAjaxErrors = function (data, errorDivId = 'editValidationErrorsBox') {
   if (data.status == 404) {

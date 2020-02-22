@@ -119,7 +119,8 @@ class UserRepository extends BaseRepository
         return $input;
     }
 
-    public function profileUpdate($input)
+    public function
+    profileUpdate($input)
     {
         /** @var User $user */
         $user = $this->findOrFail(Auth::id());

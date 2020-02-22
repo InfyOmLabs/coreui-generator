@@ -111,12 +111,16 @@ class UserController extends AppBaseController
      *
      * @param  int  $id
      *
+     * @param  Request  $request
      * @return JsonResponse
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         $user = User::find($id);
 
+        if ($request->ajax()) {
+            return $this->sendResponse($user, '');
+        }
         if (empty($user)) {
             Flash::error('User not found');
 
