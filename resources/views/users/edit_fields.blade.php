@@ -42,7 +42,7 @@
         </div>
         <div class="form-group col-sm-12">
             {!! Form::label('role_id', 'Role') !!} <span class="required">*</span>
-            {!! Form::select('role_ids[]',$roles, null, ['class' => 'form-control','id'=>'editRoleId','multiple'=>true,'required']) !!}
+            {!! Form::select('role_ids[]',$roles, $selectedRoles, ['class' => 'form-control','id'=>'editRoleId','multiple'=>true,'required']) !!}
         </div>
     </div>
 <!-- Submit Field -->

@@ -130,8 +130,9 @@ class UserController extends AppBaseController
             return $this->sendError('User not found.');
         }
         $roles = $this->roleRepo->getRolesList();
+        $selectedRoles = $user->roles()->pluck('role_id')->toArray();
 
-        return view('users.edit',compact('user','roles'));
+        return view('users.edit', compact('user', 'roles','selectedRoles'));
     }
 
     /**
