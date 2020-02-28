@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * App\Models\User.
@@ -50,7 +51,7 @@ use Illuminate\Support\Carbon;
  */
 class User extends Authenticatable
 {
-    use Notifiable, ImageTrait;
+    use Notifiable, ImageTrait, HasRoles;
     use ImageTrait {
         deleteImage as traitDeleteImage;
     }

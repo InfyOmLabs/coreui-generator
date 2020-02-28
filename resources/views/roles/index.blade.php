@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('title')
-    Users
+    Roles
 @endsection
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Users</li>
+        <li class="breadcrumb-item">Roles</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -14,12 +14,12 @@
                     <div class="card">
                         <div class="card-header">
                             <i class="fa fa-align-justify"></i>
-                            Users
+                            Roles
                             <a class="btn btn-primary pull-right" style="margin-top: 0px;margin-bottom: 5px"
-                               href="{!! route('users.create') !!}">Add New</a>
+                               href="{!! route('roles.create') !!}">Add New</a>
                         </div>
                         <div class="card-body">
-                            @include('users.table')
+                            @include('roles.table')
                             <div class="pull-right mr-3">
 
                             </div>
@@ -33,22 +33,17 @@
 
 @section('scripts')
     <script>
-      $('#roleId,#editRoleId').select2({
-        width: '100%',
-        placeholder: 'Select Role',
-        minimumResultsForSearch: -1,
-      })
       $(function () {
-        $('#users_table').DataTable({
+        $('#role_table').DataTable({
           processing: true,
           serverSide: true,
           'order': [[0, 'desc']],
           ajax: {
-            url: '{!! url(route('users.index'))  !!}',
+            url: '{!! url(route('roles.index'))  !!}',
           },
           columnDefs: [
             {
-              'targets': [0, 4],
+              'targets': [2],
               'orderable': false,
               'className': 'text-center',
               'width': '5%',
@@ -56,33 +51,17 @@
           ],
           columns: [
             {
-              data: function (row) {
-                if (row) {
-                  return '<img class="assignee__avatar" style="width: 35px;" src="' +
-                    row.image_path +
-                    '" data-toggle="tooltip" title="' + row.name +
-                    '">'
-                } else {
-                  return ''
-                }
-              },
-              name: 'name',
-            },
-            {
               data: 'name',
               name: 'name',
             },
             {
-              data: 'email',
-              name: 'email',
-            },
-            {
-              data: 'phone',
-              name: 'phone',
+              data: 'description',
+              name: 'description',
             },
             {
               data: function (row) {
-                return '<a title="Edit" class="btn action-btn btn-primary btn-sm edit-btn mr-1" href="{{url('/users')}}/' + row.id + '/edit" >' +
+                return '<a title="Edit" class="btn action-btn btn-primary btn-sm edit-btn mr-1" href="{{url('/roles')}}/' +
+                  row.id + '/edit" >' +
                   '<i class="fa fa-pencil" style="font-size:15px;color:white"></i>' + '</a>' +
                   '<a title="Delete" class="btn action-btn btn-danger btn-sm delete-btn" data-id="' +
                   row.id + '">' +
@@ -95,9 +74,9 @@
 
       // open delete confirmation model
       $(document).on('click', '.delete-btn', function (event) {
-        let userId = $(event.currentTarget).data('id');
-        deleteItem('{{url('users')}}/' + userId, '#users_table', 'User');
-      });
+        let roleId = $(event.currentTarget).data('id')
+        deleteItem('{{url('roles')}}/' + roleId, '#role_table', 'Role')
+      })
     </script>
 @endsection
 

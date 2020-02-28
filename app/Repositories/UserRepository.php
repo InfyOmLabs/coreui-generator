@@ -62,7 +62,9 @@ class UserRepository extends BaseRepository
                 $input['image_path'] = ImageTrait::makeImage($input['photo'], User::IMAGE_PATH);
             }
 
-            User::create($input);
+            $user =User::create($input);
+            /** @var User $user */
+            $this->assignRoles($user, $input);
 
         } catch (Exception $e) {
             throw new BadRequestHttpException($e->getMessage());
@@ -92,7 +94,7 @@ class UserRepository extends BaseRepository
             }
 
             $user->update($input);
-
+            $this->assignRoles($user, $input);
 
             DB::commit();
 
@@ -101,6 +103,20 @@ class UserRepository extends BaseRepository
             DB::rollBack();
             throw new ApiOperationFailedException($e->getMessage());
         }
+    }
+
+    /**
+     * @param User  $user
+     * @param array $input
+     *
+     * @return bool
+     */
+    public function assignRoles($user, $input)
+    {
+        $roles = !empty($input['role_ids']) ? $input['role_ids'] : [];
+        $user->roles()->sync($roles);
+
+        return true;
     }
 
     /**
@@ -119,8 +135,7 @@ class UserRepository extends BaseRepository
         return $input;
     }
 
-    public function
-    profileUpdate($input)
+    public function profileUpdate($input)
     {
         /** @var User $user */
         $user = $this->findOrFail(Auth::id());

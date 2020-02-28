@@ -32,6 +32,10 @@
 @endsection
 @section('scripts')
     <script>
+      $('#roleId').select2({
+        width: '100%',
+        placeholder: "Select Role"
+      });
       $(function () {
 
         $(document).on('change', '#userImage', function () {

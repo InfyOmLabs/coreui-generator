@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateUserProfileRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use App\Queries\UserDataTable;
+use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
 use Auth;
 use DataTables;
@@ -28,9 +29,13 @@ class UserController extends AppBaseController
     /** @var  UserRepository */
     private $userRepository;
 
-    public function __construct(UserRepository $userRepo)
+    /** @var RoleRepository $roleRepo */
+    private $roleRepo;
+
+    public function __construct(UserRepository $userRepo, RoleRepository $roleRepo)
     {
         $this->userRepository = $userRepo;
+        $this->roleRepo = $roleRepo;
     }
 
     /**
@@ -46,8 +51,9 @@ class UserController extends AppBaseController
         if ($request->ajax()) {
             return Datatables::of((new UserDataTable())->get())->make(true);
         }
+        $roles = $this->roleRepo->getRolesList();
 
-        return view('users.index');
+        return view('users.index', compact('roles'));
     }
 
     /**
@@ -57,7 +63,9 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+        $roles = $this->roleRepo->getRolesList();
+
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -107,27 +115,23 @@ class UserController extends AppBaseController
 
 
     /**
-     * Show the form for editing the specified Video.
+     * Show the form for editing the specified User.
      *
-     * @param  int  $id
+     * @param  int $id
      *
-     * @param  Request  $request
      * @return JsonResponse
      */
-    public function edit($id, Request $request)
+    public function edit($id)
     {
+        /** @var User $user */
         $user = User::find($id);
 
-        if ($request->ajax()) {
-            return $this->sendResponse($user, '');
-        }
         if (empty($user)) {
-            Flash::error('User not found');
-
-            return redirect(route('users.index'));
+            return $this->sendError('User not found.');
         }
+        $roles = $this->roleRepo->getRolesList();
 
-        return view('users.edit',compact('user'));
+        return view('users.edit',compact('user','roles'));
     }
 
     /**
