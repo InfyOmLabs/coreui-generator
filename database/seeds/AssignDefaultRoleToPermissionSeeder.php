@@ -21,7 +21,7 @@ class AssignDefaultRoleToPermissionSeeder extends Seeder
         $adminRole->givePermissionTo($permissions);
 
         /** @var User $user */
-        $user = User::whereEmail('me@mitul.me')->first();
+        $user = User::whereEmail('admin@gmail.com')->first();
         if ($user) {
             $user->assignRole($adminRole);
         }
