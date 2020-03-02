@@ -31,68 +31,10 @@
     </div>
 @endsection
 
-@section('scripts')
+@section('page_scripts')
     <script>
-      $(function () {
-        $('#users_table').DataTable({
-          processing: true,
-          serverSide: true,
-          'order': [[0, 'desc']],
-          ajax: {
-            url: '{!! url(route('users.index'))  !!}',
-          },
-          columnDefs: [
-            {
-              'targets': [0, 4],
-              'orderable': false,
-              'className': 'text-center',
-              'width': '5%',
-            },
-          ],
-          columns: [
-            {
-              data: function (row) {
-                if (row) {
-                  return '<img class="assignee__avatar" style="width: 35px;" src="' +
-                    row.image_path +
-                    '" data-toggle="tooltip" title="' + row.name +
-                    '">'
-                } else {
-                  return ''
-                }
-              },
-              name: 'name',
-            },
-            {
-              data: 'name',
-              name: 'name',
-            },
-            {
-              data: 'email',
-              name: 'email',
-            },
-            {
-              data: 'phone',
-              name: 'phone',
-            },
-            {
-              data: function (row) {
-                return '<a title="Edit" class="btn action-btn btn-primary btn-sm edit-btn mr-1" href="{{url('/users')}}/' + row.id + '/edit" >' +
-                  '<i class="cui-pencil action-icon"></i>' + '</a>' +
-                  '<a title="Delete" class="btn action-btn btn-danger btn-sm delete-btn" data-id="' +
-                  row.id + '">' +
-                  '<i class="cui-trash action-icon" ></i></a>'
-              }, name: 'id',
-            },
-          ],
-        })
-      })
-
-      // open delete confirmation model
-      $(document).on('click', '.delete-btn', function (event) {
-        let userId = $(event.currentTarget).data('id');
-        deleteItem('{{url('users')}}/' + userId, '#users_table', 'User');
-      });
+      let userUrl = '{{url('users')}}/'
     </script>
+    <script src="{{ asset('js/users/user.js') }}"></script>
 @endsection
 

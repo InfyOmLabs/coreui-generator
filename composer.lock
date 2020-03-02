@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "299bb76b2d0c56336f5904829f3a57fb",
+  "content-hash": "42733493ab1111dc12a4b1d19d0257b1",
     "packages": [
         {
             "name": "appointer/swaggervel",
@@ -837,12 +837,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/coreui-templates.git",
-                "reference": "4600aecc64f31d80aebb3a5f100d827550bd7575"
+              "reference": "1d007b5559ad78f8df1e25e211e3305f24750efc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/coreui-templates/zipball/4600aecc64f31d80aebb3a5f100d827550bd7575",
-                "reference": "4600aecc64f31d80aebb3a5f100d827550bd7575",
+              "url": "https://api.github.com/repos/InfyOmLabs/coreui-templates/zipball/1d007b5559ad78f8df1e25e211e3305f24750efc",
+              "reference": "1d007b5559ad78f8df1e25e211e3305f24750efc",
                 "shasum": ""
             },
             "require": {
@@ -874,7 +874,7 @@
                 "laravel",
                 "templates"
             ],
-            "time": "2020-02-08T11:53:32+00:00"
+          "time": "2020-02-21T12:51:11+00:00"
         },
         {
             "name": "infyomlabs/laravel-generator",
@@ -6941,12 +6941,12 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "infyomlabs/laravel-generator": 20,
+      "appointer/swaggervel": 20,
         "infyomlabs/adminlte-templates": 20,
         "infyomlabs/coreui-templates": 20,
-        "intervention/image": 20,
-        "appointer/swaggervel": 20,
-        "infyomlabs/swagger-generator": 20
+      "infyomlabs/laravel-generator": 20,
+      "infyomlabs/swagger-generator": 20,
+      "intervention/image": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
