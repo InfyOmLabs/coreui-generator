@@ -2,27 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\UserDataTable;
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserProfileRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Models\User;
-use App\Queries\UserDataTable;
+use App\User;
 use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
-use Auth;
-use DataTables;
 use Exception;
-use Flash;
-use Hash;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
-use Redirect;
-use Response;
+use Laracasts\Flash\Flash;
 
 class UserController extends AppBaseController
 {
@@ -39,21 +36,16 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Display a listing of the User.
+     * Display a listing of the Post.
      *
-     * @param  Request  $request
-     * @throws Exception
-     *
-     * @return Factory|View
+     * @param  UserDataTable  $userDataTable
+     * @return JsonResponse|View
      */
-    public function index(Request $request)
+    public function index(UserDataTable $userDataTable)
     {
-        if ($request->ajax()) {
-            return Datatables::of((new UserDataTable())->get())->make(true);
-        }
         $roles = $this->roleRepo->getRolesList();
 
-        return view('users.index', compact('roles'));
+        return $userDataTable->render('users.index', compact('roles'));
     }
 
     /**

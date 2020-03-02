@@ -17,7 +17,7 @@
             {!! Form::label('detail', 'Permissions:') !!}
             <div class="row">
                 @foreach($permissions as $key=>$value)
-                    <div class="col-md-6 role-checkbox mt-1">
+                    <div class="col-sm-4 role-checkbox mt-1">
                         <label class="role-checkbox__label d-flex align-items-center"><input name="permissions[]" type="checkbox" class="permission-checkbox" value="{{$key}}"> {{$value}}</label>
                     </div>
                 @endforeach
