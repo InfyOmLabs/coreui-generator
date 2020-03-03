@@ -11,20 +11,6 @@
     </div>
 </div>
 <div class="row">
-    <div class="form-group col-sm-3">
-        {!! Form::label('password', 'New Password:') !!}
-        <div class="input-group">
-            <input class="form-control input-group__addon" id="pfNewPassword" type="password"
-                   name="password">
-        </div>
-    </div>
-    <div class="form-group col-sm-3">
-        {!! Form::label('password_confirmation', 'Confirm Password:') !!}
-        <div class="input-group">
-            <input class="form-control input-group__addon" id="pfNewConfirmPassword" type="password"
-                   name="password_confirmation">
-        </div>
-    </div>
     <!-- Phone Field -->
     <div class="form-group col-sm-3">
         {!! Form::label('phone', 'Phone:') !!}

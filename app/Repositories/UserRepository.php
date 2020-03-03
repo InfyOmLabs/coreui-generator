@@ -93,7 +93,6 @@ class UserRepository extends BaseRepository
 
             $user->update($input);
 
-
             DB::commit();
 
             return $user;
