@@ -25,8 +25,7 @@
             <div class="card mx-4">
                 <div class="card-body p-4">
                     <form method="post" action="{{ url('/register') }}">
-
-                        {!! csrf_field() !!}
+                        @csrf
                         <h1>Register</h1>
                         <p class="text-muted">Create your account</p>
                         <div class="input-group mb-3">
