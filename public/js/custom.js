@@ -122,4 +122,12 @@ window.displayPhoto = function (input, selector) {
     }
   }
 };
-
+window.displaySuccessMessage = function (message) {
+  $.toast({
+    heading: 'Success',
+    text: message,
+    showHideTransition: 'slide',
+    icon: 'success',
+    position: 'top-right',
+  })
+}

@@ -2,12 +2,12 @@
 <div class="row">
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}<span class="required">*</span>
-    {!! Form::text('name', null, ['id'=>'name','class' => 'form-control','required']) !!}
+    {!! Form::text('name', null, ['id'=>'name', 'class' => 'form-control', 'required']) !!}
 </div>
     <!-- Email Field -->
     <div class="form-group col-sm-6">
         {!! Form::label('email', 'Email:') !!}<span class="required">*</span>
-        {!! Form::email('email', null, ['id'=>'email','class' => 'form-control','required']) !!}
+        {!! Form::email('email', null, ['id'=>'email', 'class' => 'form-control', 'required']) !!}
     </div>
 </div>
 <div class="row">
@@ -30,12 +30,12 @@
     <!-- Phone Field -->
     <div class="form-group col-sm-3">
         {!! Form::label('phone', 'Phone:') !!}
-        {!! Form::number('phone', null, ['id'=>'phone','class' => 'form-control']) !!}
+        {!! Form::number('phone', null, ['id'=>'phone', 'class' => 'form-control']) !!}
     </div>
         <div class="form-group col-sm-3">
             {!! Form::label('photo', 'Profile:') !!}
             <label class="edit-profile__file-upload"> Choose
-                {!! Form::file('photo',['id'=>'userImage','class' => 'd-none']) !!}
+                {!! Form::file('photo', ['id'=>'userImage', 'class' => 'd-none']) !!}
             </label>
             <div class="text-right" style="margin-top: -75px; margin-right: 170px;">
                 <img id='edit_preview' class="img-thumbnail" width="100px"

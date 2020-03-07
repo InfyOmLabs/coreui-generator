@@ -10,6 +10,9 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/css/coreui.min.css">
     <!-- Ionicons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@icon/coreui-icons-free@1.0.1-alpha.1/coreui-icons-free.css">
+    <!-- Ionicons -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
@@ -26,7 +29,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="{{asset('images/logo-red-black.png')}}" width="50px"
+        <img class="img-circle" src="{{Auth::user()->image_path}}" width="50px"
              alt="Infyom Logo">&nbsp;&nbsp;<span class="navbar-brand-full">InfyOm</span>
         <img class="navbar-brand-minimized" src="{{asset('images/logo-red-black.png')}}" width="50px"
              alt="InfyOm Logo">
@@ -89,7 +92,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/js/coreui.min.js"></script>
-<script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
 @yield('datatable_js')
 @yield('page_js')
 @yield('page_scripts')
