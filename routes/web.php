@@ -19,3 +19,8 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('users', 'UserController');
+    Route::post('users/profile-update', 'UserController@profileUpdate')->name('update-profile');
+    Route::post('users/change-password', 'UserController@changePassword')->name('change-password');
+});

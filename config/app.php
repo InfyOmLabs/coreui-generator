@@ -1,5 +1,7 @@
 <?php
 
+use Intervention\Image\ImageServiceProvider;
+
 return [
 
     /*
@@ -181,6 +183,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -236,6 +239,7 @@ return [
         'Html'         => Collective\Html\HtmlFacade::class,
         'Flash'        => Laracasts\Flash\Flash::class,
         'DataTables'   => Yajra\DataTables\Facades\DataTables::class,
+        'Image'        => Intervention\Image\Facades\Image::class,
     ],
 
 ];

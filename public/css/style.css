@@ -1,0 +1,133 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.form-control {
+    border-radius: 5px !important;
+}
+
+.filter-control {
+    margin-top: -5px !important;
+    margin-bottom: 5px !important;
+}
+.disabled {
+    pointer-events: none;
+}
+.lbl-block {
+    display: block;
+}
+
+.dataTables_filter input {
+    width:180px !important;
+}
+.column-right
+{
+    width:50px;
+}
+.column-right-2
+{
+    width:60px;
+}
+.column-right-3
+{
+    width:81px;
+}
+
+.column-right-4 {
+    width: 105px;
+}
+.no-sort {
+    background-image: none !important;
+}
+[class^='select2'] {
+    border-radius: 4px !important;
+}
+.required {
+    color: red;
+}
+
+.d-none {
+    display: none;
+}
+.yes-color {
+    color: #66CC33;
+}
+.no-color {
+    color: #FF6666;
+}
+.resize-none {
+    resize: none;
+}
+
+.preview-image-video-container {
+    padding-left: 0px;
+    margin-top: 20px;
+}
+div.dataTables_wrapper div.dataTables_processing {
+    top: 30%;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.content-wrapper {
+    max-height: calc(100vh - 101px);
+    overflow: auto;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}
+.mt-10{
+    margin-top:10px;
+}
+.sweet-alert h2{
+    font-size:20px;
+}
+.no-sort::after{
+    content: "" !important;
+}
+
+.edit-profile__file-upload {
+    padding: 7px 10px;
+    background: #20a8d8;
+    display: table;
+    color: #fff;
+    border-radius: 0.25rem;
+    border-color: #20a8d8;
+}
+.edit-profile__file-upload:hover {
+    cursor: pointer;
+    background-color: #1985ac;
+    border-color: #187da0;
+}
+.assignee__avatar {
+    padding: 2px;
+    height: 35px;
+    border-radius: 50em;
+}
