@@ -7,12 +7,12 @@ use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserProfileRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Repositories\UserRepository;
 use App\User;
+use App\Repositories\RoleRepository;
+use App\Repositories\UserRepository;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
@@ -26,9 +26,13 @@ class UserController extends AppBaseController
     /** @var  UserRepository */
     private $userRepository;
 
-    public function __construct(UserRepository $userRepo)
+    /** @var RoleRepository $roleRepo */
+    private $roleRepo;
+
+    public function __construct(UserRepository $userRepo, RoleRepository $roleRepo)
     {
         $this->userRepository = $userRepo;
+        $this->roleRepo = $roleRepo;
     }
 
     /**
@@ -39,7 +43,9 @@ class UserController extends AppBaseController
      */
     public function index(UserDataTable $userDataTable)
     {
-        return $userDataTable->render('users.index');
+        $roles = $this->roleRepo->getRolesList();
+
+        return $userDataTable->render('users.index', compact('roles'));
     }
 
     /**
@@ -49,7 +55,9 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+        $roles = $this->roleRepo->getRolesList();
+
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -97,27 +105,24 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Show the form for editing the specified Video.
+     * Show the form for editing the specified User.
      *
-     * @param  int  $id
+     * @param  int $id
      *
-     * @param  Request  $request
      * @return JsonResponse
      */
-    public function edit($id, Request $request)
+    public function edit($id)
     {
+        /** @var User $user */
         $user = User::find($id);
 
-        if ($request->ajax()) {
-            return $this->sendResponse($user, '');
-        }
         if (empty($user)) {
-            Flash::error('User not found');
-
-            return redirect(route('users.index'));
+            return $this->sendError('User not found.');
         }
+        $roles = $this->roleRepo->getRolesList();
+        $selectedRoles = $user->roles()->pluck('role_id')->toArray();
 
-        return view('users.edit',compact('user'));
+        return view('users.edit', compact('user', 'roles','selectedRoles'));
     }
 
     /**

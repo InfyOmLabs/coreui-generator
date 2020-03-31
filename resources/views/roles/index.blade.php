@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('title')
-    Users
+    Roles
 @endsection
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Users</li>
+        <li class="breadcrumb-item">Roles</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -14,12 +14,12 @@
                     <div class="card">
                         <div class="card-header">
                             <i class="fa fa-align-justify"></i>
-                            Users
+                            Roles
                             <a class="btn btn-primary pull-right" style="margin-top: 0px;margin-bottom: 5px"
-                               href="{!! route('users.create') !!}">Add New</a>
+                               href="{!! route('roles.create') !!}">Add New</a>
                         </div>
                         <div class="card-body">
-                            @include('users.table')
+                            @include('roles.table')
                             <div class="pull-right mr-3">
 
                             </div>
@@ -32,6 +32,6 @@
 @endsection
 
 @section('page_scripts')
-    <script src="{{ asset('js/users/user.js') }}"></script>
+    <script src="{{ asset('js/roles/role.js') }}"></script>
 @endsection
 

@@ -1,4 +1,4 @@
-{{--{!! Form::open(['route' => ['users.destroy', $id], 'method' => 'delete']) !!}--}}
+<center>
 <div class='btn-group'>
     <a href="{{ route('users.edit', $id) }}" class='btn action-btn btn-primary btn-sm edit-btn mr-1'>
         <i class="fa a fa-pencil-square-o" style="color:white;font-size:15px"></i>
@@ -7,4 +7,5 @@
         <i class="fa fa-trash-o" style="color:white;font-size:15px"></i>
     </a>
 </div>
+</center>
 {!! Form::close() !!}
