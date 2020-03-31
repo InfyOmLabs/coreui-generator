@@ -27,11 +27,6 @@
                         <div class="input-group">
                             <input class="form-control input-group__addon" id="pfCurrentPassword" type="password"
                                    name="password_current" required>
-                            <div class="input-group-append input-group__icon">
-                                <span class="input-group-text changeType">
-                                    <i class="icon-ban icons"></i>
-                                </span>
-                            </div>
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
@@ -39,11 +34,6 @@
                         <div class="input-group">
                             <input class="form-control input-group__addon" id="pfNewPassword" type="password"
                                    name="password" required>
-                            <div class="input-group-append input-group__icon">
-                                <span class="input-group-text changeType">
-                                    <i class="icon-ban icons"></i>
-                                </span>
-                            </div>
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
@@ -52,11 +42,6 @@
                         <div class="input-group">
                             <input class="form-control input-group__addon" id="pfNewConfirmPassword" type="password"
                                    name="password_confirmation" required>
-                            <div class="input-group-append input-group__icon">
-                                <span class="input-group-text changeType">
-                                    <i class="icon-ban icons"></i>
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </div>

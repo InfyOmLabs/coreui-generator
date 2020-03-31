@@ -38,10 +38,10 @@ class PermissionRepository extends BaseRepository
     }
 
     /**
-     * @return Collection
+     * @return array
      */
     public function permissionList()
     {
-        return Permission::pluck('display_name', 'id');
+        return Permission::pluck('display_name', 'id')->toArray();
     }
 }

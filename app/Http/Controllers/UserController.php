@@ -84,7 +84,6 @@ class UserController extends AppBaseController
         }
     }
 
-
     /**
      * Display the specified User.
      *
@@ -102,9 +101,8 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-        return view('users.show')->with('User', $user);
+        return view('users.show')->with('user', $user);
     }
-
 
     /**
      * Show the form for editing the specified User.

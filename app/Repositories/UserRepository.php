@@ -135,6 +135,11 @@ class UserRepository extends BaseRepository
         return $input;
     }
 
+    /**
+     * @param  array  $input
+     *
+     * @return bool
+     */
     public function profileUpdate($input)
     {
         /** @var User $user */

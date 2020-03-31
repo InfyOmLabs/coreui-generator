@@ -5,7 +5,7 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('users.index') }}">User</a>
+                <a href="{{ route('roles.index') }}">Role</a>
             </li>
             <li class="breadcrumb-item active">Detail</li>
      </ol>
@@ -17,10 +17,10 @@
                          <div class="card">
                              <div class="card-header">
                                  <strong>Details</strong>
-                                  <a href="{{ route('users.index') }}" class="btn btn-light">Back</a>
+                                  <a href="{{ route('roles.index') }}" class="btn btn-light">Back</a>
                              </div>
                              <div class="card-body">
-                                 @include('users.show_fields')
+                                 @include('roles.show_fields')
                              </div>
                          </div>
                      </div>

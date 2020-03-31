@@ -56,10 +56,12 @@ $('#changePasswordForm').submit(function (event) {
 
 $('#EditProfileModal').on('hidden.bs.modal', function () {
     resetModalForm('#editProfileForm', '#editProfileValidationErrorsBox')
+    $('#pfName').focus();
 })
 
 $('#ChangePasswordModal').on('hidden.bs.modal', function () {
     resetModalForm('#changePasswordForm', '#editPasswordValidationErrorsBox')
+    $('#pfCurrentPassword').focus();
 })
 
 // open edit user profile model
@@ -183,9 +185,16 @@ $('.changeType').click(function () {
         inputField.attr('type', 'password')
     }
 })
-$('#ChangePasswordModal').on('shown.bs.modal', function () {
-  $('#pfCurrentPassword').focus()
-});
-$('#EditProfileModal').on('shown.bs.modal', function () {
-  $('#pfName').focus()
-});
+window.manageAjaxErrors = function (data, errorDivId = 'editValidationErrorsBox') {
+    if (data.status == 404) {
+        $.toast({
+            heading: 'Error',
+            text: data.responseJSON.message,
+            showHideTransition: 'fade',
+            icon: 'error',
+            position: 'top-right',
+        });
+    } else {
+        printErrorMessage("#" + errorDivId, data);
+    }
+};

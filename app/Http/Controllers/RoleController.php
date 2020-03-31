@@ -84,6 +84,31 @@ class RoleController extends AppBaseController
     }
 
     /**
+     * Display the specified Sop.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        /** @var Role $role */
+        $roles = Role::whereId($id)->first();
+        $permissions = $this->permissionRepository->permissionList();
+        $data = array(
+            'roles'       => $roles,
+            'permissions' => $permissions,
+        );
+        if (empty($roles)) {
+            Flash::error('Role not found');
+
+            return redirect(route('roles.index'));
+        }
+
+        return view('roles.show')->with($data);
+    }
+
+    /**
      * Show the form for editing the specified Roles.
      *
      * @param Role $role
