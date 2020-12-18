@@ -11,7 +11,9 @@ CoreUI Generator
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-You can use this ready-made coreui boilerplate if you don't want to set up laravel coreui from initial steps.
+If you are starting fresh new laravel project, then boilerplates can be the best option for you to get started. It gives you a full laravel project with everything installed and published.
+
+Read [Documentation](http://www.infyom.com/open-source/laravelgenerator/docs/8.0/boilerplates) for detailed installation steps and usage.
 
 ## Support Us
 
